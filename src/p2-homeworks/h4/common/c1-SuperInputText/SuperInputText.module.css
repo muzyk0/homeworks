@@ -1,0 +1,25 @@
+.input {
+    padding: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) inset, 0 2px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    outline: none;
+    color: #333;
+}
+
+.superInput {
+    border: 10px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.errorInput {
+    border: 10px solid rgba(255, 0, 0, 0.25);
+}
+
+.error {
+    color: red;
+}
+
+.blue {
+    background-color: blue;
+}

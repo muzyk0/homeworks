@@ -1,0 +1,49 @@
+.message {
+    display: flex;
+    align-items: flex-end;
+
+    margin: 10px;
+}
+
+.message__inner {
+    position: relative;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px 5px 5px 0;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message__inner::before {
+    position: absolute;
+    bottom: 0;
+    left: -15px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0) 15px, rgba(0, 0, 0, 0.9) 0);
+    /*radial-gradient(5em circle at top left, yellow, blue)*/
+}
+.message__name {
+    color: rebeccapurple;
+}
+.message__text {
+    min-width: 150px;
+    max-width: 300px;
+    word-wrap: break-word;
+    color: #fff;
+}
+
+.message__time {
+    color: green;
+    position: absolute;
+    bottom: 5px;
+    right: 5px
+}
+
+.message img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
