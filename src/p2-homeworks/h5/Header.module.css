@@ -1,0 +1,16 @@
+.navBar {
+    min-height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.navBar .link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    padding: 10px 10px;
+    background: palegreen;
+}
+
+.link + .link {
+    margin-left: 10px;
+}

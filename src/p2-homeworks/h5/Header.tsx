@@ -1,12 +1,41 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
+import {NavLink} from 'react-router-dom';
+import s from './Header.module.css'
+import {PATH} from './Routes';
 
 function Header() {
-    return (
-        <div>
-            // add NavLinks
 
+    const [menuCollapsed, setMenuCollapsed] = useState(false)
+
+    useEffect(() => {
+        const menuValue = localStorage.getItem('menuCollapsed')
+        if (menuValue) {
+            let newMenuValue = JSON.parse(menuValue)
+            setMenuCollapsed(newMenuValue)
+        }
+    }, [])
+    useEffect(() => {
+        localStorage.setItem('menuCollapsed', JSON.stringify(menuCollapsed))
+    }, [menuCollapsed])
+
+    return (
+        <div className={s.navBar}>
+            <div className={s.link} onClick={() => setMenuCollapsed(!menuCollapsed)}>Menu</div>
+            {menuCollapsed && <Menu/>}
         </div>
     );
 }
+
+const Menu = () => {
+
+    return (
+        <>
+            <NavLink exact to={PATH.PRE_JUNIOR} className={s.link}>Pre Junior</NavLink>
+            <NavLink exact to={PATH.JUNIOR} className={s.link}>Junior</NavLink>
+            <NavLink exact to={PATH.JUNIOR_PLUS} className={s.link}>Junior Plus</NavLink>
+        </>
+    )
+}
+
 
 export default Header;
