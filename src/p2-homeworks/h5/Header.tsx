@@ -20,8 +20,14 @@ function Header() {
 
     return (
         <div className={s.navBar}>
-            <div className={s.link} onClick={() => setMenuCollapsed(!menuCollapsed)}>Menu</div>
-            {menuCollapsed && <Menu/>}
+            <div>
+                <div className={s.link} onClick={() => setMenuCollapsed(!menuCollapsed)}>Menu</div>
+                {menuCollapsed && <Menu/>}
+            </div>
+            <div className={s.animateNavBar}>
+                <div className={s.link}>Menu</div>
+                <Menu/>
+            </div>
         </div>
     );
 }
@@ -32,7 +38,7 @@ const Menu = () => {
         <>
             <NavLink exact to={PATH.PRE_JUNIOR} className={s.link}>Pre Junior</NavLink>
             <NavLink exact to={PATH.JUNIOR} className={s.link}>Junior</NavLink>
-            <NavLink exact to={PATH.JUNIOR_PLUS} className={s.link}>Junior Plus</NavLink>
+            <NavLink exact to={PATH.JUNIOR_PLUS} className={s.link}>Junior+</NavLink>
         </>
     )
 }

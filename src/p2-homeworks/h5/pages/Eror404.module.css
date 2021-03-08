@@ -1,0 +1,10 @@
+.pageError {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    height: 100%;
+    background-color: rgba(33, 33, 33, .3);
+}

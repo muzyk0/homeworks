@@ -1,6 +1,10 @@
 .navBar {
     min-height: 30px;
     background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
 }
 
 .navBar .link {
@@ -8,9 +12,24 @@
     text-decoration: none;
     color: #000000;
     padding: 10px 10px;
-    background: palegreen;
+    background: #98fb98;
+    transition: 0.3s ease;
+}
+.navBar .link:hover {
+    background: #e1ff5a;
 }
 
 .link + .link {
     margin-left: 10px;
+}
+/**/
+.animateNavBar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: -250px;
+    transition: 1s ease;
+}
+.animateNavBar:hover {
+    right: 0;
 }
