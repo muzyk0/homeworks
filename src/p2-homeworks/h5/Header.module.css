@@ -15,6 +15,9 @@
     background: #98fb98;
     transition: 0.3s ease;
 }
+.navBar .link.active {
+    background: pink;
+}
 .navBar .link:hover {
     background: #e1ff5a;
 }

@@ -36,9 +36,9 @@ const Menu = () => {
 
     return (
         <>
-            <NavLink exact to={PATH.PRE_JUNIOR} className={s.link}>Pre Junior</NavLink>
-            <NavLink exact to={PATH.JUNIOR} className={s.link}>Junior</NavLink>
-            <NavLink exact to={PATH.JUNIOR_PLUS} className={s.link}>Junior+</NavLink>
+            <NavLink exact to={PATH.PRE_JUNIOR} activeClassName={s.active} className={s.link}>Pre Junior</NavLink>
+            <NavLink exact to={PATH.JUNIOR} activeClassName={s.active} className={s.link}>Junior</NavLink>
+            <NavLink exact to={PATH.JUNIOR_PLUS} activeClassName={s.active} className={s.link}>Junior+</NavLink>
         </>
     )
 }
