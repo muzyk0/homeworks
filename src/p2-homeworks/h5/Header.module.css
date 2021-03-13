@@ -28,11 +28,13 @@
 /**/
 .animateNavBar {
     display: flex;
-    position: absolute;
-    top: 0;
-    right: -250px;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: -250px;*/
     transition: 1s ease;
+    transform: translate(250px);
 }
 .animateNavBar:hover {
     right: 0;
+    transform: translate(-6px);
 }

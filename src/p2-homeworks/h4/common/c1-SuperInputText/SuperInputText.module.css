@@ -8,12 +8,12 @@
 }
 
 .superInput {
-    border: 10px solid rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.25);
     background: rgba(255, 255, 255, 0.7);
 }
 
 .errorInput {
-    border: 10px solid rgba(255, 0, 0, 0.25);
+    border-color: rgba(255, 0, 0, 0.25);
 }
 
 .error {
