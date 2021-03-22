@@ -1,8 +1,8 @@
 .pageError {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-self: center;
+    width: 100%;
 }
 .error {
     margin-top: 10%;
@@ -10,9 +10,9 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 600px;
-    height: 600px;
-    background: rgba(33, 33, 33, .3) url("https://css-tricks.com/wp-content/themes/CSS-Tricks-18/images/ripped.jpg") center;
+    width: 100%;
+    min-height: 600px;
+    background: rgba(33, 33, 33, .3) url("https://css-tricks.com/wp-content/themes/CSS-Tricks-18/images/ripped.jpg") ;
     background-size: cover;
-    border-radius: 50%;
+    border-radius: 20px;
 }

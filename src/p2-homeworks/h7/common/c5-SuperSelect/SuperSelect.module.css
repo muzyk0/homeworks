@@ -1,0 +1,14 @@
+.select {
+    display: inline-block;
+    background: palegreen;
+    width: 100px;
+    height: 20px;
+    border: 2px solid transparent;
+    outline: none;
+}
+.select:hover {
+    border: 2px solid #00ffff;
+}
+.option:hover {
+    background-color: #e1ff5a;
+}
