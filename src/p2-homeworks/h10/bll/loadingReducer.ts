@@ -11,14 +11,14 @@ const initState: initStateType = {
 export const loadingReducer = (state: initStateType = initState, action: actions): initStateType => {
     switch (action.type) {
         case "isLoading": {
-            return {...state, isLoading: action.isLoading}
+            return {...state, ...action.payload}
         }
         default: return state;
     }
 };
 type actions = ReturnType<typeof loadingAC>
 export const loadingAC = (isLoading: boolean) => {
-    return {type: 'isLoading', isLoading}
+    return {type: 'isLoading', payload: {isLoading}}
 };
 export const loadingThunk = () => (dispatch: Dispatch) => {
     dispatch(loadingAC(true))
