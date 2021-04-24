@@ -1,14 +1,40 @@
-const initState = {
+import {Dispatch} from 'redux';
 
+type initStateType = {
+    isLoading: boolean
+}
+
+const initState: initStateType = {
+    isLoading: false
 };
 
-export const loadingReducer = (state = initState, action: any): any => { // fix any
+export const loadingReducer = (state: initStateType = initState, action: actions): initStateType => {
     switch (action.type) {
-        case "": {
-            return state;
+        case "isLoading": {
+            return {...state, isLoading: action.isLoading}
         }
         default: return state;
     }
 };
+type actions = ReturnType<typeof loadingAC>
+export const loadingAC = (isLoading: boolean) => {
+    return {type: 'isLoading', isLoading}
+};
+export const loadingThunk = () => (dispatch: Dispatch) => {
+    dispatch(loadingAC(true))
+    console.log("loading...");
 
-export const loadingAC = (): any => {}; // fix any
+    const backGround = document.getElementById('root');
+    // @ts-ignore
+    backGround.style.animation = 'lds-hourglass 2s infinite'
+
+    setTimeout(() => {
+        dispatch(loadingAC(false))
+        console.log("load");
+
+        const backGround = document.getElementById('root');
+        // @ts-ignore
+        backGround.style.animation = 'none'
+
+    }, 2000)
+}
