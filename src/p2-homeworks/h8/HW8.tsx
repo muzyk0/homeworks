@@ -11,16 +11,26 @@ const initialPeople = [
     {_id: 5, name: "Ирина", age: 55},
 ]
 
+export type initialStateType = typeof initialPeople
+
 function HW8() {
     const [people, setPeople] = useState(initialPeople);
 
     const finalPeople = people.map(p => (
-        <div key={p._id}>
-            some name, age
+        <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '200px',
+
+        }} key={p._id}>
+            <div>{`${p.name}`}</div>
+            <div>{`${p.age}`}</div>
         </div>
     ))
 
     const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: "sort", payload: "up"}))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, {type: "sort", payload: "down"}))
+    const check18 = () => setPeople(homeWorkReducer(initialPeople, {type: "check", payload: 18}))
 
     return (
         <div>
@@ -30,10 +40,9 @@ function HW8() {
             {/*should work (должно работать)*/}
 
             {finalPeople}
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-
-            check 18
+            <div style={ {display: 'flex'} }><SuperButton onClick={sortUp}>sort up</SuperButton>
+                <SuperButton onClick={sortDown}>sort down</SuperButton>
+                <SuperButton onClick={check18}>check 18</SuperButton></div>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
