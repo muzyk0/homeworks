@@ -15,7 +15,7 @@ export const themeReducer = (state = initState, action: ActionType): InitialStat
     }
 };
 
-export const changeThemeC = (theme: string) => ({type: 'APP/CHANGE-THEME', payload: {color: theme}} as const);
+export const changeThemeC = (theme: string) => ({type: Actions.CHANGE_THEME, payload: {color: theme}} as const);
 
 // Types
 type InitialStateType = typeof initState

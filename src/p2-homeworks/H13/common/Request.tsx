@@ -1,24 +1,20 @@
 import React, {useState} from 'react';
 import SuperButton from '../../h4/common/c2-SuperButton/SuperButton';
 import SuperCheckbox from '../../h4/common/c3-SuperCheckbox/SuperCheckbox';
-import {requestsAPI, RequestsType} from '../dal/RequestsAPI';
-import {AxiosError} from 'axios';
+import {RequestsType} from '../dal/RequestsAPI';
+import {useDispatch, useSelector} from 'react-redux';
+import {AppStoreType} from '../../h10/bll/store';
+import {setRequest} from '../bll/requestReducer';
 
 const Request = () => {
 
-    const [value, setValue] = useState(false)
+    const [value, setValue] = useState<boolean>(false)
 
-    const [text, setText] = useState<null | RequestsType>(null)
+    const state = useSelector<AppStoreType, RequestsType>(state => state.request)
+    const dispatch = useDispatch()
 
-    const sendRequest = async () => {
-
-        await requestsAPI.postRequest(value)
-            .then(response => {
-                setText(response.data)
-            })
-            .catch((e: AxiosError) => {
-                setText(e.response?.data)
-            })
+    const sendRequest = () => {
+        dispatch(setRequest(value))
     }
 
     return (
@@ -26,9 +22,9 @@ const Request = () => {
             <SuperButton onClick={sendRequest}>Send request</SuperButton>
             <SuperCheckbox onChangeChecked={setValue}/>
             <div>
-                {!!text && <div>
-                    <p>{text && text.errorText}</p>
-                    <p>{text && text.info}</p>
+                {!!state && <div>
+                    <p>{state && state.errorText}</p>
+                    <p>{state && state.info}</p>
                 </div>}
             </div>
 
