@@ -1,3 +1,5 @@
 .range {
-
+    display: inline-block;
+    width: 300px;
+    margin: 0 15px;
 }

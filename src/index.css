@@ -14,7 +14,7 @@ code {
 }
 
 #root {
-    background: rgba(0, 0, 0, 0.2) url("girl_with_computer.jpg") no-repeat;
+    background: rgba(0, 0, 0, 0.4) url("girl_with_computer.jpg") no-repeat ;
     background-size: cover;
     height: 100%;
 }

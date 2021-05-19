@@ -1,14 +1,24 @@
-const initState = {
+export enum Actions {
+    CHANGE_THEME = 'APP/CHANGE-THEME',
+}
 
+const initState = {
+    color: 'red' as string
 };
 
-export const themeReducer = (state = initState, action: any): any => { // fix any
+export const themeReducer = (state = initState, action: ActionType): InitialStateType => {
     switch (action.type) {
-        case "": {
-            return state;
+        case Actions.CHANGE_THEME: {
+            return {...state, ...action.payload}
         }
         default: return state;
     }
 };
 
-export const changeThemeC = (): any => {}; // fix any
+export const changeThemeC = (theme: string) => ({type: 'APP/CHANGE-THEME', payload: {color: theme}} as const);
+
+// Types
+type InitialStateType = typeof initState
+
+export type ActionType =
+    | ReturnType<typeof changeThemeC>
